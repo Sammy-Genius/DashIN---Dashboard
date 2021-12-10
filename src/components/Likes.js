@@ -26,7 +26,7 @@ const Likes = () => {
                 <div className="likes-wrapper">
                     <div className="likes-box">
                         <div className="likes-img lightGreen-color">
-                            <img src={ require('../assets/img-7.png').default} alt="likes dashboard image responsive" />
+                            <img src={ require('../assets/img-7.png').default} alt="likes dashboard responsive" />
                         </div>
                         <div className="likes-text">
                             <h4>Bill Gates</h4>
@@ -37,7 +37,7 @@ const Likes = () => {
                     </div>
                     <div className="likes-box">
                         <div className="likes-img">
-                            <img src={ require('../assets/img-6.png').default} alt="likes dashboard image responsive" />
+                            <img src={ require('../assets/img-6.png').default} alt="likes dashboard responsive" />
                         </div>
                         <div className="likes-text">
                             <h4>Mark Zuckerberg</h4>
@@ -48,7 +48,7 @@ const Likes = () => {
                     </div>
                     <div className="likes-box">
                         <div className="likes-img lightPink-color">
-                            <img src={ require('../assets/img-5.png').default} alt="likes dashboard image responsive" />
+                            <img src={ require('../assets/img-5.png').default} alt="likes dashboard responsive" />
                         </div>
                         <div className="likes-text">
                             <h4>Elon Musk</h4>
@@ -59,7 +59,7 @@ const Likes = () => {
                     </div>
                     <div className="likes-box">
                         <div className="likes-img Crimson-color">
-                            <img src={ require('../assets/img-8.png').default} alt="likes dashboard image responsive" />
+                            <img src={ require('../assets/img-8.png').default} alt="likes dashboard responsive" />
                         </div>
                         <div className="likes-text">
                             <h4>Rihanna</h4>

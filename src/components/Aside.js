@@ -28,7 +28,7 @@ const Aside = ( { toggleModal }) => {
                 </div>
                 <div className="img-box">
                     <div className="image-one">
-                        <img src={require('../assets/img-3.png').default} alt="pic influencer dashboard" />
+                        <img src={require('../assets/img-3.png').default} alt="influencer dashboard" />
                     </div>
                 </div>
             </div>
