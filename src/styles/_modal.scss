@@ -1,0 +1,127 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.modal {
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:7000;
+}
+
+.backdrop {
+    width:100%;
+    height:100%;
+    background-color: rgb(49, 49, 49, 0.8);
+    @include m.flex-box(center, column);
+}
+
+.modal-content {
+    width:300px;
+    height:570px;
+    background-color: v.$white;
+    border-radius:20px;
+    @include m.flex-box(center, row);
+
+    @media screen and (max-width:380px) {
+        height:520px;
+        width:250px;
+    }
+
+    @media screen and (max-width:320px) {
+        height:450px;
+        width:250px;
+    }
+}
+
+.close-modal {
+    margin-top:30px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background-color: v.$white;
+    @include m.flex-box(center,row);
+    cursor: pointer;
+
+    @media screen and (max-width:320px) {
+        height:40px;
+        width:40px;
+    }
+
+    .close-icon {
+        font-size:1.3rem;
+        color:crimson;
+    }
+}
+
+.modal-content .modal-wrapper {
+    width:90%;
+    height:90%;
+    @include m.flex-box(space-between,column);
+}
+
+.contact-list {
+    width:100%;
+    @include m.flex-box(center,column);
+    padding:20px;
+}
+
+.contact-list .person-img {
+    width:50px;
+    height:50px;
+    background-color:v.$yellow;
+    border-radius:50%;
+    @include m.flex-box(center,row);
+    margin-bottom:10px;
+
+    @media screen and (max-width:320px) {
+        height:40px;
+        width:40px;
+    }
+
+    img {
+        width:100%;
+        height:100%;
+    }
+}
+
+.contact-list .lightPink-color {
+    background-color: #ffcccc;
+}
+
+.contact-list .lightGreen-color {
+    background-color: #7efff5;
+}
+
+.modal-wrapper h6 {
+    color:v.$grey;
+
+    @media screen and (max-width:320px) {
+        font-size: .8rem;
+    }
+}
+
+.modal-wrapper .share-socials {
+    width:100%;
+    @include m.flex-box(space-around, row);
+
+    span {
+        font-size:1.3rem;
+        cursor:pointer;
+
+        @media screen and (max-width:320px) {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+    .modal-wrapper h1 {
+        font-size: .9rem;
+    }
+
+    .modal-wrapper h5 {
+        font-size: .8rem;
+    }
+}

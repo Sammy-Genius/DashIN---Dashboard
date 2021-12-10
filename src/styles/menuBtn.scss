@@ -1,0 +1,25 @@
+@use './variables' as v;
+
+.menu-btn {
+    position: absolute;
+    top:4%;
+    right:5%;
+    z-index:4000;
+}
+
+.menu-btn div {
+    width:30px;
+    height:3px;
+    background-color:v.$background-color;
+    margin-bottom:3px;
+}
+
+.menu-btn div:nth-child(2) {
+    width:20px;
+}
+
+@media screen and (min-width: v.$pc) {
+    .menu-btn {
+        display:none;
+    }
+}

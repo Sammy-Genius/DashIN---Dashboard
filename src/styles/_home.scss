@@ -1,0 +1,837 @@
+@use './variables'as v;
+@use './mixins' as m;
+
+.main-wrapper .home {
+    width:100%;
+    height:100%;
+    @include m.flex-box(space-between, row);
+
+    @media screen and (max-width: v.$mobile) {
+        height:auto;
+        @include m.flex-box(space-between, column-reverse);
+    }
+
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        height:auto;
+        @include m.flex-box(space-between, column-reverse);
+    }
+}
+
+.home .container-1 {
+    width:70%;
+    height:100%;
+    @include m.flex-box(space-between, column);
+
+    @media screen and (max-width: v.$mobile) {
+        width:100%;
+        margin-top:60px;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        width:100%;
+        height:auto;
+   }
+
+    
+}
+
+.container-1 .stats-heading {
+   display:flex;
+   justify-content: space-between;
+   width:100%;
+   height:10%;
+
+   @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+    margin:60px 0;
+}
+
+   h1 {
+        font-size:3rem;
+        color:v.$white;
+
+        @media screen and (max-width: v.$mobile) {
+            color:#000000;
+            font-size: 2rem;
+            margin-bottom:20px;
+
+        }
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            color:#000000;
+       }
+    }
+
+    div {
+        width:160px;
+        height:60px;
+        border:2px solid v.$green;
+        border-radius:30px;
+        @include m.flex-box(center, row);
+        cursor: pointer;
+        color:v.$grey;
+
+        &:hover {
+            background-color:v.$green;
+            color:v.$white;
+        }
+
+        @media screen and (max-width: v.$mobile) {
+            width:120px;
+            height:50px;
+            background-color: v.$green;
+        }
+        
+        p {
+            font-weight:900;
+
+            @media screen and (max-width: v.$mobile) {
+                font-size: .8rem;
+                color:v.$white;
+            }
+        }
+    }
+
+}
+
+.container-1 .content-wrapper {
+    width:100%;
+    height:85%;
+    @include m.flex-box(space-between, column);
+
+    @media screen and (max-width: v.$mobile) {
+        width:100%;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        height:auto; 
+   }
+}
+
+.content-wrapper .account-box, .content-wrapper .actions-box {
+    width:100%;
+    height:47%;
+}
+
+.content-wrapper .account-box {
+    @include m.flex-box(space-between, row);
+
+    @media screen and (max-width: v.$mobile) {
+        height:230px;
+        overflow-x: auto;
+        -ms-overflow-style:none;
+        scrollbar-width:none;
+        margin-bottom:60px;
+        border-radius:20px;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        height:260px;
+   }
+}
+
+@media screen and (max-width:v.$mobile) {
+    .account-box::-webkit-scrollbar {
+        width:0;
+        display:none;
+    }
+}
+
+.account-box .account-details, .account-box .sm-activity {
+    width:48%;
+    height:100%;
+}
+
+.account-box .account-details {
+    background-color: v.$white;
+    border-radius:20px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.20 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    @include m.flex-box(space-between, row);
+
+    @media screen and (max-width: v.$mobile) {
+        min-width:320px;
+        background-color: v.$white;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        background-color: v.$white;
+   }
+
+    .potential {
+        width:50%;
+        height:100%;
+        margin-left:20px;
+        @include m.flex-box(space-evenly, column);
+    }
+}
+
+.potential h2 {
+    font-size:1.5rem;
+    color:v.$white;
+
+    @media screen and (max-width: v.$mobile) {
+        font-size: 1rem;
+        color:#000000;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        color:#000000; 
+   }
+}
+
+.potential .percentage {
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border:5px solid v.$white;
+    border-left:5px solid v.$pink;
+    border-top:5px solid v.$yellow;
+    @include m.flex-box(center, column);
+
+    @media screen and (max-width: v.$mobile) {
+        width:100px;
+        height:100px;
+        border:5px solid v.$lightGrey;
+        border-left:5px solid v.$pink;
+        border-top:5px solid v.$yellow;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        border-right:5px solid v.$lightGrey;
+        border-bottom:5px solid v.$lightGrey;
+   }
+
+    p:nth-child(1) {
+        font-weight:900;
+        font-size:2rem;
+        color:v.$white;
+
+        @media screen and (max-width: v.$mobile) {
+            color:#000000;
+            font-size: 1.3rem;
+        }
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            color:#000000;
+       }
+    }
+
+    p:nth-child(2) {
+        color:v.$lightGrey;
+
+        @media screen and (max-width: v.$mobile) {
+            color:#000000;
+            font-size: .6rem;
+        }
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            color:#000000;
+       }
+    }
+}
+
+.account-details .premium {
+        width:47%;
+        height:95%;
+        margin-right:5px;
+        position:relative;
+    }
+
+.premium .premium-account {
+    width:70%;
+    @include m.flex-box(space-between, row);
+    margin:30px 0;
+
+    @media screen and (max-width: v.$mobile) {
+        margin:65px 0;
+    }
+
+    p {
+        font-weight: 900;
+
+        @media screen and (max-width: v.$mobile) {
+            font-size: .8rem;
+            margin-left:10px;
+        }
+    }
+
+    .star-icon {
+        width:30px;
+        height:30px;
+        border-radius:50%;
+        background-color: v.$lightGrey;
+        @include m.flex-box(center, row);
+
+        .star {
+            transform: rotate(18deg);
+            color:v.$green;
+        }
+    }
+}
+
+.premium .debit-card {
+    position:absolute;
+    bottom:0;
+    background-color: v.$pink;
+    width:100%;
+    height:60%;
+    border-radius:20px;
+    @include m.flex-box(space-around, column);
+
+    @media screen and (max-width: v.$mobile) {
+        padding:5px 0;
+        height:45%;
+    }
+
+    p {
+        color:v.$white;
+
+        @media screen and (max-width: v.$mobile) {
+            font-size: .8rem;
+        }
+    }
+}
+
+.debit-card .align-account {
+    margin-left:-60px;
+}
+
+.number {
+    width:50%;
+    @include m.flex-box(space-between,row);
+
+    p:nth-child(2) {
+        font-size:1.5rem;
+
+        @media screen and (max-width: v.$mobile) {
+            font-size:1rem;
+        }
+    }
+}
+
+.chip-icon {
+    width:60px;
+    height:32px;
+    border-radius:20px;
+    margin-right:-80px;
+    @include m.flex-box(center, row);
+    background-color:#97455db7;
+
+    @media screen and (max-width: v.$mobile) {
+        width:50px;
+        height:25px;
+    }
+
+    .chip {
+        transform: rotate(60deg);
+        color:v.$white;
+        font-size:1.2rem;
+
+        @media screen and (max-width: v.$mobile) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.account-box .sm-activity {
+    @include m.flex-box(space-between, row);
+}
+
+.account-box .sm-activity .sm-wrapper {
+    width:45%;
+    height:100%;
+    border-radius:30px;
+    background-color: v.$lightGrey;
+    @include m.flex-box(center, row);
+
+    @media screen and (max-width: v.$mobile) {
+        min-width:180px;
+    }
+}
+
+.sm-wrapper .social-media {
+    width:90%;
+    height:90%;
+    @include m.flex-box(space-between, column);
+
+    h3 {
+        align-self: flex-start;
+        padding: 15px;
+
+        @media screen and (max-width: v.$mobile) {
+            align-self: center;
+        }
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            align-self:center;
+        }
+    }
+}
+
+.social-media .graph-1, .social-media .graph-2 {
+    color:v.$green;
+    font-size:4rem;
+
+    @media screen and (max-width: v.$mobile) {
+        font-size: 3.5rem;
+    }
+} 
+
+.social-media .graph-2 {
+    color:v.$pink;
+}
+
+.social-media .activity {
+    width:100%;
+    height:70px;
+    background-color: v.$white;
+    border-radius:30px;
+    @include m.flex-box(center, row);
+
+    @media screen and (max-width: v.$mobile) {
+        height:60px;
+    }
+
+    p {
+        color:v.$grey;
+        font-weight:900;
+    }
+}
+
+
+
+.content-wrapper .actions-box {
+    @include m.flex-box(space-between, row);
+
+    @media screen and (max-width: v.$mobile) {
+        @include m.flex-box(space-evenly, column);
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        margin-top:80px;
+        margin-bottom:150px;
+    }
+}
+
+.actions-box .shapes {
+    width:30%;
+    height:100%;
+    border-radius:20px;
+
+    @media screen and (max-width: v.$mobile) {
+        min-width:280px;
+        height:310px;
+        margin-bottom:20px;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+         height: 320px;   
+    }
+}
+
+.actions-box .shapes:nth-child(1) {
+    border-radius:0;
+    margin-bottom:0px;
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        @include m.flex-box(space-between, column);
+        align-items: flex-start; //overrides align-items center in mixins
+    }
+
+    h2 {
+        font-size:1.5rem;
+        height:10%;
+
+        @media screen and (max-width: v.$mobile) {
+            font-size:1.3rem;
+            text-align: center;
+        }
+    }
+}
+
+.actions-box .shapes:nth-child(2) {
+    background-color:#ffcccc;
+    @include m.flex-box(space-around, column);
+}
+
+.shapes-img {
+    width:170px;
+    height:170px;
+    margin-top:-20px;
+    background-position: center;
+    background-size: 100%;
+}
+
+.actions-box .shapes:nth-child(3) {
+    background-color:#7efff5;
+    @include m.flex-box(space-around, column);
+    position: relative;
+
+    @media screen and (max-width:v.$mobile) {
+        margin-bottom:150px;
+    }
+
+    span {
+        position:absolute;
+        left:6%;
+        bottom:35%;
+        background-color:v.$white;
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        @include m.flex-box(center, row);
+        font-size: 1.2rem;
+        font-weight: 900;
+        color:v.$green;
+    }
+}
+
+
+.actions {
+    margin-top:30px;
+
+    @media screen and (max-width: v.$mobile) {
+        width:280px;
+        margin:30px auto;
+    }
+
+    li {
+        list-style-type: none;
+        margin-bottom:30px;
+        font-weight: 900;
+    }
+}
+
+.actions .spacing {
+    background-color:v.$lightGrey;
+    margin-right:30px;
+    padding:6px 8px;
+    border-radius:5px;
+}
+
+.green {
+    color:v.$green;
+}
+
+.pink {
+    color:v.$pink;
+}
+
+.actions-text {
+    font-size:1.2rem;
+}
+
+.main-wrapper .container-2 {
+    width:26%;
+    height:100%;
+    @include m.flex-box(center, row);
+    border:2px solid v.$green;
+    border-radius:40px;
+
+    @media screen and (max-width: v.$mobile) {
+        width:100%;
+        height:700px;
+        margin-top:30px;
+        border:none;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        border:none;
+        width:100%;
+        height:850px;
+    }
+
+}
+
+.container-2 .container2-wrapper {
+    width:100%;
+    height:97%;
+    @include m.flex-box(space-between, column);
+}
+
+.container2-wrapper .monthly {
+    width:95%;
+    height:50%;
+    border-radius:20px 20px 0 0;
+    background-color:v.$background-color;
+    position: relative;
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        background-color: transparent;
+        width:100%;
+    }
+}
+
+.monthly .monthly-wrapper {
+    width:100%;
+    height:60%;
+    border-radius:40px;
+    background-color:v.$lightGrey;
+    @include m.flex-box(space-between, column);
+    position:relative;
+    
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        width:70%;
+        margin:0 auto;
+    }
+
+    .hello {
+        @include m.flex-box(center, row);
+        position:relative;
+        margin-top:20px;
+
+        p {
+            font-weight:900;
+            font-size: 1.3rem;
+
+            @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+                font-size: 1.5rem;
+            }
+        }
+
+        span {
+            position:absolute;
+            top:0;
+            right:-35%;
+            font-size:1.2rem;
+
+            @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+                font-size: 1.5rem;
+            }
+
+            @media screen and (max-width: 320px) {
+                right:-30%;
+            }
+
+            @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+                right:-110%;
+            }
+        }
+    }
+}
+
+.monthly-wrapper .img-wrapper {
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    margin-bottom:-50px;
+    background-color:v.$background-color;
+    @include m.flex-box(center, row);
+    
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        width:150px;
+        height:150px;
+    }
+
+    .main-img {
+        width:110px;
+        height:110px;
+        background-color: v.$yellow;
+        border-radius:50%;
+        @include m.flex-box(center, row);
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            width:130px;
+            height:130px;
+        }
+
+        img {
+            width:90px;
+            height:90px;
+
+            @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+                width:110px;
+                height:110px;
+            }
+        }
+    }
+}
+
+.monthly .goal {
+    position: absolute;
+    bottom:0;
+    width:100%;
+    @include m.flex-box(space-between, row);
+    
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        @include m.flex-box(space-around, row);
+    }
+}
+
+.goal-wrapper {
+    width:55%;
+    @include m.flex-box(space-between, row);
+    
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        width:25%;
+    }
+
+    .goal-percentage {
+        width:70px;
+        height:70px;
+        border-radius: 50%;
+        border:4px solid v.$green;
+        border-right:4px solid v.$lightGrey;
+        border-bottom:4px solid v.$lightGrey;
+        @include m.flex-box(center, row);
+        font-weight:900;
+        font-size: 1.2rem;
+        color:v.$grey;
+        margin-left:15px;
+
+        @media screen and (min-width: 320px) {
+            width:64px;
+            height:64px;
+            font-size: 1.1rem;
+        }
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            width:80px;
+            height:80px;
+            font-size:1.5rem;
+            margin-left:0;
+        }
+    }
+
+    p {
+        font-weight:900;
+        font-size:1.2rem;
+
+        @media screen and (min-width: 320px ) {
+            font-size: 1.1rem;
+        }
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            font-size:1.5rem;
+        }
+    }
+}
+
+.goal h5 {
+    font-size:1.2rem;
+    color:v.$grey;
+    margin-right:35px;
+
+    @media screen and (min-width: 320px) {
+        font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+       font-size:1.5rem; 
+       margin-right: 0;
+    }
+}
+
+.container2-wrapper .points {
+    width:100%;
+    height:45%;
+    @include m.flex-box(center, row);
+    padding-top:15px;
+    border-top:2px solid v.$green;
+
+    @media screen and (max-width:v.$mobile) {
+        border-top:none;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        border:none;
+    }
+}
+
+.points .points-wrapper {
+    width:90%;
+    height:95%;
+    @include m.flex-box(space-between, column);
+    
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        width:100%;
+        height:100%;
+    }
+
+    .points-container {
+        width:100%;
+        height:70%;
+        @include m.flex-box(space-between, row);
+    }
+}
+
+.points-container .points-box:nth-child(1) {
+    width: 20%;
+    height:100%;
+    @include m.flex-box(space-between, column);
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        width:10%;
+    }
+
+    .point-icon {
+        width:100%;
+        height:25%;
+        border-radius:10px;
+        background-color:v.$lightGrey;
+        @include m.flex-box(center, row);
+        font-size:1.3rem;
+        color:v.$grey;
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+.points-container .points-box:nth-child(2), .points-container .points-box:nth-child(3) {
+    width: 34%;
+    height:100%;
+    @include m.flex-box(space-between, column);
+
+    div {
+        height:25%;
+        align-self: flex-start;
+        font-weight:900;
+        @include m.flex-box(center, row);
+
+        @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+            font-size:1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+     .points-container .points-box:nth-child(2) {
+         margin-left:-120px;
+     }   
+}
+
+@media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+    .points-container .points-box:nth-child(3) div {
+        width:100%;
+        height:100%;
+        @include m.flex-box(center, column);
+        align-items: flex-end;
+    }
+}
+
+.points-wrapper .sponsor {
+    width:95%;
+    height:50px;
+    background-color: v.$yellow;
+    border-radius:30px;
+    @include m.flex-box(center, row);
+    font-weight: 900;
+    color:v.$white;
+
+    @media screen and (max-width:v.$mobile) {
+        height:60px;
+    }
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        width:50%;
+        height:80px;
+        font-size: 1.5rem;
+    }
+}

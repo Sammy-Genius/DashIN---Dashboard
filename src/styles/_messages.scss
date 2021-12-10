@@ -1,0 +1,346 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.main-wrapper .messages {
+    z-index:1000;
+    width:100%;
+    height:100%;
+    @include m.flex-box(center, row);
+
+    @media screen and (max-width: v.$mobile) {
+        width:98%;
+        margin-top:40px;
+    }
+}
+
+.message-box-one {
+    width:40%;
+    height:100%;
+    @include m.flex-box(center, row);
+
+    @media screen and (max-width:v.$tablet) {
+        width:100%;
+    }
+
+    .box-one-wrapper {
+        width:90%;
+        height:100%;
+
+        @media screen and (max-width:v.$mobile) {
+            width:100%;
+        }
+    }
+}
+
+.title-box {
+    width:100%;
+    height:20%;
+    @include m.flex-box(space-between, column);
+    align-items:flex-start; //overrides align-items center in mixins
+    border-bottom:1px solid v.$grey;
+
+    @media screen and (max-width:v.$tablet) {
+        @include m.flex-box(space-between, row-reverse);
+        padding-bottom:20px;
+    }
+
+    h1 {
+        font-size:2rem;
+        margin-bottom:10px;
+        color:v.$white;
+
+        @media screen and (max-width:v.$mobile) {
+            color:#2d3436;
+            font-size: 1.8rem;
+        }
+        
+    }
+}
+
+.search-message {
+    font-size:1.8rem;
+    color:v.$white;
+
+    @media screen and (max-width:v.$mobile) {
+        color:#2d3436;
+        font-size: 1.5rem;
+    }
+
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        color:#2d3436;
+    }
+}
+
+.inbox {
+    width:100%;
+    height:80%;
+    @include m.flex-box(center, row);
+    align-items:flex-end; //overrides align-items center in mixins
+
+    @media screen and (max-width:v.$mobile) {
+        height:auto;
+    }
+
+    .inbox-container {
+        width:100%;
+        height:90%;
+    }
+}
+
+.inbox h5 {
+    color:v.$white;
+    height:10%;
+    margin-bottom:30px;
+
+    @media screen and (max-width:v.$mobile) {
+        color:#2d3436;
+        margin:30px 0;
+    }
+
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        color:#2d3436;
+        margin-bottom: -60px;
+    }
+}
+
+.inbox-container .notifs {
+    height:90%;
+    @include m.flex-box(space-evenly, column);
+
+    @media screen and (max-width:v.$mobile) {
+        height:auto;
+    }
+}
+
+.chats {
+    width:100%;
+    border-bottom:1px solid v.$grey;
+    padding:30px 0;
+    @include m.flex-box(space-between, row);
+
+    @media screen and (max-width:v.$mobile) {
+        padding: 30px 0;
+    }
+
+
+    h6 {
+        color:v.$grey;
+        font-size: .8rem;
+
+        @media screen and (max-width:v.$mobile) {
+            font-size: .6rem;
+        }
+
+        @media screen and (max-width:320px) {
+            font-size: .5rem;
+        }
+    }
+}
+
+.text-content {
+    margin-left:-120px;
+
+    @media screen and (max-width:v.$mobile) {
+        margin-left:-10px;
+    }
+
+    @media screen and (max-width:320px) {
+        margin-left: 0;
+    }
+
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        margin-left:-500px;
+    }
+}
+
+.chats .text-content p {
+    font-size:.9rem;
+
+    @media screen and (max-width:v.$mobile) {
+        font-size: .75rem;
+    }
+}
+
+.chats .text-img, .online .dp {
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    @include m.flex-box(center, row);
+    background-color: v.$yellow;
+    position:relative;
+
+    @media screen and (max-width:320px) {
+        width:50px;
+        height:50px;
+    }
+}
+
+.chats .lightPink-color {
+    background-color: #ffcccc;
+}
+
+.chats .lightGreen-color {
+    background-color: #7efff5;
+}
+
+.chats .text-img img, .dp img {
+    width:100%;
+    height:100%;
+}
+
+.chats .text-img::after {
+    content: '\00b7';
+    position:absolute;
+    width:23px;
+    height:23px;
+    border-radius:50%;
+    background-color: v.$background-color;
+    top:10%;
+    right:-18%;
+    font-size:4rem;
+    font-weight: 900;
+    color:#2ecc71;
+    @include m.flex-box(center, row);
+
+    @media screen and (max-width:320px) {
+        width:20px;
+        height:20px;
+    }
+}
+
+.chats .this-text-img::after {
+    background-color: v.$green;
+
+    @media screen and (max-width:v.$tablet) {
+        background-color: v.$background-color;
+    }
+
+}
+
+.chats:nth-child(3) {
+    margin-bottom:100px;
+}
+
+.message-box-two {
+    width:60%;
+    height:100%;
+    background-color: #2d3436;
+    border-radius: 60px 0px 0px 60px;
+    @include m.flex-box(center, row);
+
+    @media screen and (max-width: v.$tablet) {
+        display:none;
+    }
+
+    .chat-box {
+        width:90%;
+        height:100%;
+        position:relative;
+    }
+}
+
+.chat-box .chatbox-wrapper {
+    width:100%;
+    height:20%;
+    border-bottom:1px solid v.$grey;
+    @include m.flex-box(space-between, row);
+}
+
+.chatbox-wrapper .online {
+    width:31%;
+    height:100%;
+    @include m.flex-box(space-between, row);
+    align-items:flex-end; //overrides align-items center in mixins
+    margin-bottom:30px;
+
+    h4 {
+        font-size:1.2rem;
+        color:v.$white;
+    }
+
+    p {
+        font-size:.8rem;
+        font-weight: 900;
+        color:grey;
+    }
+}
+
+.online-chat {
+    height:60px;
+    @include m.flex-box(center, column);
+    align-items:flex-start; //overrides align-items center in mixins
+}
+
+.chatbox-wrapper .chat-symbols {
+    @include m.flex-box(space-between, column);
+    height:100%;
+    padding:15px 0;
+
+    span {
+        color:v.$white;
+        font-size:1.5rem;
+        cursor: pointer;
+    }
+}
+
+.chat-box .type-msg {
+    width:100%;
+    height:130px;
+    border-top:1px solid v.$grey;
+    position:absolute;
+    bottom:0;
+    @include m.flex-box(center, column);
+    align-items:stretch; //overrides align-items center in mixins
+}
+
+.type-something {
+    width:100%;
+    height:40px;
+
+    input[type = "text"] {
+        border:0;
+        outline:none;
+        background: none;
+        width:100%;
+        height:100%;
+        color:v.$white;
+    }
+}
+
+.type::placeholder {
+    color:v.$grey;
+}
+
+.type-msg .send-container {
+    height:60px;
+    @include m.flex-box(space-between, row);
+}
+
+.type-msg .send-container .media-symb {
+    width:25%;
+    @include m.flex-box(space-between, row);
+
+    span {
+        color:v.$grey;
+        font-size:1.3rem;
+    }
+}
+
+.type-msg .send-container .send-box {
+    width:100px;
+    height:40px;
+    background-color: v.$green;
+    @include m.flex-box(space-around, row);
+    cursor:pointer;
+    border-radius: 30px 30px 0 30px;
+
+    p, span {
+        color:v.$white;
+    }
+}
+
+
+
+
+
+

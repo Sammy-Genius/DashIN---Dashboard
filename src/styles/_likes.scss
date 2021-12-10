@@ -1,0 +1,123 @@
+@use './mixins' as m;
+@use './variables' as v;
+
+.main-wrapper .likes-container {
+    width:100%;
+    height:100%;
+    z-index:1000;
+    @include m.flex-box(space-between, row);
+
+    @media screen and (max-width: v.$mobile) {
+        height:auto;
+        @include m.flex-box(space-between, column);
+    }
+
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        height:50%;
+    }
+}
+
+.likes-container .likes {
+    width:40%;
+    height:100%;
+
+    @media screen and (max-width: v.$mobile) {
+        width:100%;
+    }
+
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        width:50%;
+    }
+}
+
+.likes-container .likes-background {
+    width:56%;
+    height:100%;
+    background: url('../assets/img-background.png') no-repeat;
+    background-size: 100%;
+    background-position: center;
+
+    @media screen and (max-width: v.$mobile) {
+        width:100%;
+        height:400px;
+        margin-bottom:150px;
+    }
+
+    @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+        width:45%;
+    }
+}
+
+.likes h1 {
+    font-size:2em;
+    color:v.$white;
+
+    @media screen and (max-width: v.$mobile) {
+        color:#2d3436;
+        margin:30px 0px;
+    }
+}
+
+.likes-wrapper {
+    width:100%;
+}
+
+.likes-wrapper .likes-box {
+    @include m.flex-box(space-between, row);
+    padding:30px 0;
+    border-bottom:1px solid v.$grey;
+
+    span {
+        color:v.$green;
+
+        @media screen and (min-width: 800px) and (max-width: v.$tablet) {
+            color:crimson;
+        }
+    }
+}
+
+.likes-wrapper .likes-box h6 {
+    color:v.$grey;
+    font-size: .7rem;
+}
+
+.likes-wrapper .likes-box .likes-img {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background-color: v.$yellow;
+
+    img {
+        width:100%;
+        height:100%;
+    }
+}
+
+.likes-wrapper .likes-box .likes-text {
+    width:50%;
+    margin-left:-50px;
+
+    @media screen and (max-width: v.$mobile) {
+        width:55%;
+        margin-left:0;
+    }
+
+    @media screen and (max-width: v.$mobile) {
+        p {
+            font-size:.9rem;
+        }
+    }
+}
+
+
+.likes-wrapper .likes-box .lightGreen-color {
+    background-color: #7efff5;
+}
+
+.likes-wrapper .likes-box .lightPink-color {
+    background-color: #ffcccc;
+}
+
+.likes-wrapper .likes-box .Crimson-color {
+    background-color: crimson;
+}

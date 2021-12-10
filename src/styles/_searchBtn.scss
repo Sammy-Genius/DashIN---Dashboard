@@ -1,0 +1,18 @@
+@use './variables' as v;
+
+.search-btn {
+    position: absolute;
+    top:3.5%;
+    right:6.5%;
+    z-index:4000;
+
+    @media screen and (min-width: 800px ) and (max-width: v.$tablet) {
+        display: none;
+    }
+
+    .search-icon {
+        color:v.$white;
+        font-size:1.3rem;
+    }
+}
+

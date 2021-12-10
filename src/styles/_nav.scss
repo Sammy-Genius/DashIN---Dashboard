@@ -1,0 +1,31 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.nav {
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height:90px;
+    background-color: v.$background-color;
+    z-index: 6000;
+    border-right:7px solid v.$green;
+    border-radius:30px 30px 0px 0px;
+    @include m.flex-box(space-evenly, row);
+    box-shadow: -10px -12px 76px -34px rgba(0,0,0,0.50);
+    -webkit-box-shadow: -10px -12px 76px -34px rgba(0,0,0,0.50);
+    -moz-box-shadow: -10px -12px 76px -34px rgba(0,0,0,0.50);
+
+@media screen and (min-width: v.$pc) {
+        display:none;
+}
+
+    a {
+        color:v.$green;
+        font-size:1.3rem;
+    }
+}
+
+.share-icon {
+    color:v.$green;
+    font-size:1.3rem;
+}
